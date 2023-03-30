@@ -4,16 +4,12 @@
 
 /**
  * _printf - performs same way a printf function does. it prints accprding to
- * the %c, %s, %% format specifiers. if none is found it prints the characters found.
+ * the %c, %s, %% format specifiers. if none is found it prints
+ * the characters found.
  * @format: the first arguments passed unto the function.
  * Return: the number of characters printed (excluding the null byte
  * used to end output to strings).
  */
-
-int print_char(va_list arg);
-int print_string(va_list arg);
-int _putchar(char c);
-
 int _printf(const char *format, ...)
 {
 	int i, j, count;
@@ -46,12 +42,14 @@ int _printf(const char *format, ...)
 			p = "%";
 			if (j == 2 && *(format + (i + 1)) == *p)
 				count += _putchar('%');
+			i += 2;
 		}
-		else if (*(format + i - 1) != '%')
+		else
+		{
 			count += _putchar(*(format + i));
-		i++;
+			i++;
+		}
 	}
-
 	va_end(arg);
 	return (count);
 }
@@ -64,6 +62,7 @@ int _printf(const char *format, ...)
 int print_char(va_list arg)
 {
 	int h;
+
 	h = _putchar(va_arg(arg, int));
 	return (h);
 }
@@ -76,23 +75,25 @@ int print_char(va_list arg)
  */
 int print_string(va_list arg)
 {
-	int j;
+	int j, i;
 
 	char *s = va_arg(arg, char *);
+
 	if (s == NULL)
 	{
 		char *y = "(null)";
+
 		for (j = 0; y[j]; j++)
 		{
 			_putchar(y[j]);
 		}
 		return (j);
 	}
-	for (j = 0; s[j]; j++)
+	for (i = 0; s[i]; i++)
 	{
-		 _putchar(s[j]);
+		 _putchar(s[i]);
 	}
-	return (j);
+	return (i);
 }
 
 /**
