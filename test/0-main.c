@@ -12,10 +12,10 @@ int main(void)
 	int len;
 	int len2;
 
-	len = _printf("%s%c%c%c%s%%%s%c", "\nLoading ", '.', '.', '.', " 99", " Please wait", '\n');
+	len = _printf("%K\n");
 	printf("%d\n", len);
 	printf("\nDefault printf function\n");
-	len2 = printf("%s%c%c%c%s%%%s%c", "\nLoading ", '.', '.', '.', " 99", " Please wait", '\n');
+	len2 = printf("%K\n");
 	printf("%d\n", len2);
 
 	return (0);

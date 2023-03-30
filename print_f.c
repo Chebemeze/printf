@@ -42,7 +42,10 @@ int _printf(const char *format, ...)
 			p = "%";
 			if (j == 2 && *(format + (i + 1)) == *p)
 				count += _putchar('%');
+			if (j == 2 && *(format + (i + 1)) == '\0')
+				return (-1);
 			i += 2;
+
 		}
 		else
 		{
