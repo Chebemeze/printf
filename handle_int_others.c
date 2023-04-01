@@ -41,5 +41,8 @@ int print_int(va_list arg)
 		q++;
 	}
 
+	if (c < 0)
+		q++;
+
 	return (q);
 }
