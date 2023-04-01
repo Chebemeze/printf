@@ -18,7 +18,9 @@ int _printf(const char *format, ...)
 
 	func_t op[] = {
 		{"c", print_char},
-		{"s", print_string}
+		{"s", print_string},
+		{"d", print_int},
+		{"i", print_int}}
 	};
 
 	va_start(arg, format);
@@ -30,19 +32,19 @@ int _printf(const char *format, ...)
 		if (*(format + i) == '%')
 		{
 			j = 0;
-			while (j < 2 && *(format + (i + 1)) != *(op[j].symbol))
+			while (j < 4 && *(format + (i + 1)) != *(op[j].symbol))
 			{
 				j++;
 			}
-			if (j < 2)
+			if (j < 4)
 			{
 				count += op[j].f(arg);
 			}
 
 			p = "%";
-			if (j == 2 && *(format + (i + 1)) == *p)
+			if (j == 4 && *(format + (i + 1)) == *p)
 				count += _putchar('%');
-			if (j == 2 && *(format + (i + 1)) == '\0')
+			if (j == 4 && *(format + (i + 1)) == '\0')
 				return (-1);
 			i += 2;
 
