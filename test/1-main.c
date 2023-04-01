@@ -12,10 +12,10 @@ int main(void)
 	int len;
 	int len2;
 
-	len = _printf("%d, %i\n", 24, 87);
+	len = _printf("first number: %d and second number: %i\n", 24, 478);
 	printf("%d\n", len);
 	printf("\nDefault printf function\n");
-	len2 = printf("%d, %i\n", 87, 24);
+	len2 = printf("first number: %d and second number: %i\n", 24, 478);
 	printf("%d\n", len2);
 
 	return (0);

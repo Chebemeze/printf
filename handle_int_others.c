@@ -8,20 +8,21 @@
 
 int print_int(va_list arg)
 {
-	int q;
+	int q, c;
 
 	int division_num, p,  j;
 
+	c = va_arg(arg, int);
 	division_num = 1;
-	if (va_arg(arg, int) < 0)
+	if (c < 0)
 	{
-		j = -(va_arg(arg, int));
+		j = -c;
 		_putchar('-');
 		p = j;
 	}
 	else
 	{
-		j = va_arg(arg, int);
+		j = c;
 		p = j;
 	}
 
