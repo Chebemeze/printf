@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
 /**
  * print_int - prints an int.
  * @arg: argument passed.
