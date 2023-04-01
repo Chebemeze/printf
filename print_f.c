@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"s", print_string},
 		{"d", print_int},
-		{"i", print_int}}
+		{"i", print_int}
 	};
 
 	va_start(arg, format);
